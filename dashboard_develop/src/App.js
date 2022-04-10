@@ -1,13 +1,10 @@
 import React from 'react'
 import {
   ChakraProvider,
-  Text,
-  Box,
   Container
 } from '@chakra-ui/react'
 import Fonts from './components/fonts'
 import theme from './theme/theme'
-import './App.css'
 import Header from './components/header'
 import DashboardMain from './components/main_dashboard'
 import Overview from './components/overview'
