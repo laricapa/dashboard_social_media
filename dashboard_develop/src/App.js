@@ -7,9 +7,13 @@ import {
 } from '@chakra-ui/react'
 import Fonts from './components/fonts'
 import theme from './theme/theme'
-import './App.css';
+import './App.css'
 import Header from './components/header'
-import Switcher from './components/switcher'
+import DashboardMain from './components/main_dashboard'
+import Overview from './components/overview'
+import social_media from './data_1'
+import sm_details from './data_2'
+ 
 
 function App() {
   return (
@@ -17,7 +21,8 @@ function App() {
       <Fonts />
       <Container maxW="container.lg">
         <Header />
-        <Switcher />
+        <DashboardMain dataItems = {social_media} />
+        <Overview dataItems = {sm_details}/>
       </Container>
     </ChakraProvider>
   );

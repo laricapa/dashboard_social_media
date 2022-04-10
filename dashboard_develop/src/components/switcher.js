@@ -1,15 +1,27 @@
 import React from 'react'
-import {MdLightMode} from 'react-icons/md'
-import { Switch } from '@chakra-ui/react'
-import {
-    Icon
-} from '@chakra-ui/react'
+import { 
+    Switch,
+    useColorMode,
+    useColorModeValue,
+    HStack,
+    Text
+ } from '@chakra-ui/react'
 
 
 function Switcher(){
+    const {colorMode, toggleColorMode} = useColorMode()
+    const textToggle = useColorModeValue('wtLetterText','dtLetterText')
     return(
-        <Switch onChange={()=>{alert('hola mundo')}} />
+        <HStack spacing={[200,5]}>
+            <Text
+            color={textToggle}
+            fontSize="sm"
+            fontWeight="bold"
+            >{colorMode == 'light' ? 'Dark Mode' : 'Light Mode'}</Text>
+            <Switch onChange={toggleColorMode} colorScheme="bgToggle"/> 
+        </HStack>
     )
 }
+
 
 export default Switcher
